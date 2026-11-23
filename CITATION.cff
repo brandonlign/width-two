@@ -1,0 +1,23 @@
+cff-version: 1.2.0
+message: "Please cite the paper when using the result or verification code."
+title: "Order polynomials of width-two posets can have negative coefficients"
+type: software
+authors:
+  - family-names: Li
+    given-names: Brandon
+    email: brandon.li.gn@gmail.com
+    affiliation: "Great Neck, New York, USA"
+repository-code: "https://github.com/brandonlign/width-two"
+license: MIT
+keywords:
+  - order polynomial
+  - width-two poset
+  - Ehrhart positivity
+  - linear extensions
+preferred-citation:
+  type: article
+  authors:
+    - family-names: Li
+      given-names: Brandon
+  title: "Order polynomials of width-two posets can have negative coefficients"
+  year: 2026

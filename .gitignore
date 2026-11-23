@@ -1,0 +1,9 @@
+original/
+.DS_Store
+.venv/
+__pycache__/
+*.pyc
+paper/*.aux
+paper/*.log
+paper/*.out
+paper/build/

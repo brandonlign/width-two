@@ -1,0 +1,26 @@
+Counterexample: P(28,33,5,7) has [t]Omega = -233/872541560
+  first values Omega(0..3) = [0, 1, 975, 257280]
+  formula, map count, ideal count and descent DP agree; t is the only negative coefficient
+Infinite family: closed form matches direct counts for 5 <= m <= 45; negative exactly for m >= 35 (checked to m = 2000); limit -3/8
+  P(30, 31, 6, 6): [t]Omega = -4563/6107790920
+  P(35, 35, 5, 5): [t]Omega = -496/393347955
+  P(50, 50, 5, 5): [t]Omega = -78913/7152314400
+Proposition 3.1 formula matches direct counts on 200 random parameter sets
+smallest size with a negative linear coefficient: 61
+  P(28, 33, 5, 7): -233/872541560
+  P(30, 31, 6, 6): -4563/6107790920
+  P(31, 30, 6, 6): -4563/6107790920
+  P(33, 28, 7, 5): -233/872541560
+verified 1
+verified 2
+verified 3
+verified 4
+(0, 2, 4, 6) 2002 0 504 5 [0, 36, 144, 180, 72, 0]
+Checked 508 exact unicyclic-union boards of total size <= 10.
+random width-two posets with N <= 14, all coefficients nonnegative in each class:
+  series-parallel: 1706
+  short chain: 1930
+  pseudoforest: 1255
+  none: 158
+complement zigzags: Omega(Z_4) = (5t^4+10t^3+7t^2+2t)/24; coefficients in degrees 1..N positive for 4 <= N <= 40
+W_P = 1 + 8z + 9z^2 + z^3; coordinates (57, -5, 3, 5)/60
