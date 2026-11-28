@@ -79,8 +79,8 @@ skew shape $\lambda/\mu$ inside the $m\times n$
 rectangle~\cite[Section~8]{CPP}. Ferroni, Morales, and Panova denote this poset
 by $R_{\lambda/\mu}$ and state Conjecture~\ref{conj:FMP} in that notation.
 They verified the conjecture by exhaustive computation whenever both chains have
-at most five elements, and also for the complement zigzags $\overline Z_n$ with
-$n\le200$~\cite[Remark~7.3]{FMP}.
+at most five elements~\cite[Section~7.1]{FMP}, and also for the complement
+zigzags $\overline Z_n$ with $n\le200$~\cite[Remark~7.3]{FMP}.
  
 \subsection*{Main results}
 Our first result disproves the conjecture with a $43$-element counterexample.
@@ -282,7 +282,7 @@ last row from the full $k\times m$ rectangle, deleting a hook with arm $h-1$ and
 leg $r-1$ at one corner.
  
 Since $A_m$ and $B_1$ are incomparable, $P(m,k,r,h)$ has width exactly two. In
-the notation of~\cite{FMP}, $P(28,33,5,7)$ is the poset of
+this notation, $P(28,33,5,7)$ is the poset of
 Theorem~\ref{thm:main}, and $P(m,m,5,5)$ is the poset $P_m$ of
 Theorem~\ref{thm:family}.
  
@@ -560,7 +560,7 @@ polynomial in the piece sizes, and for $k\le4$ its coefficients can be listed
 and checked by computer.
  
 Let the long chain have $m$ elements and the short chain have $k\le4$ elements.
-The case of a single chain is immediate, so assume $k\ge1$. By
+If $k=0$, then $P$ is a chain, and its order polynomial is $\binom{t+N-1}{N}$, which has positive coefficients; so assume $k\ge1$ and hence $m\ge1$. By
 Lemma~\ref{lem:matchings}, $h_j$ counts choices of $j$ increasing indices $i$
 in the short chain together with strictly increasing marks $x_i\in(l_i,u_i]$.
  
@@ -583,8 +583,7 @@ multivariate binomial basis by exact integer binomial inversion on the gap
 vectors of total size at most $k+1$, and verified that all of them are
 nonnegative for $1\le k\le4$. Because every multivariate binomial basis element
 is nonnegative on nonnegative integers, the right-hand side is nonnegative. The
-prefactor is positive whenever $m\ge1$, while at $m=0$ the right-hand side
-gives the polynomial extension with no marks. Thus $\lin(P)\ge0$.
+prefactor is positive, so $\lin(P)\ge0$.
  
 Since any ideal or filter of $P$ is again covered by two chains one of which
 has at most four elements, Lemma~\ref{lem:reduction} applies.
@@ -748,8 +747,9 @@ Cases (1), (2) and (3) follow directly from Theorems~\ref{thm:sp},
  
 \begin{corollary}\label{cor:zigzag}
 For every $N$, the complement zigzag $\overline Z_N$ has an order polynomial with
-nonnegative coefficients. For $N\ge4$, its coefficients in degrees
-$1,\dots,N$ are all positive.
+nonnegative coefficients. For $N\ge4$, its linear coefficient is positive, and a
+direct computation shows that all its coefficients in degrees $1,\dots,N$ are
+positive for $4\le N\le40$.
 \end{corollary}
  
 \begin{proof}
@@ -759,15 +759,11 @@ lengths two and three generate all such differences. Its incomparability graph
 is a path, so Theorem~\ref{thm:sparse} yields nonnegativity. For $N\ge4$, the
 comparability graph is connected, so the linear coefficient is positive.
  
-When $N=4$,
+The positivity of the remaining coefficients for $4\le N\le40$ is verified in
+exact arithmetic by \path{checks/random_small_posets.py}; for example,
 \[
  \Omega_{\overline Z_4}(t)=\frac{5t^4+10t^3+7t^2+2t}{24}.
 \]
-For $N>4$, consider the coefficient convolution arising from the cut recursion
-in the proof of~\cite[Theorem~3.4]{FMP}. It includes a term corresponding to
-the ideal $\{1\}$ and its complementary filter $\overline Z_{N-1}$. By
-induction, this product contributes a positive amount in each degree
-$2,\dots,N$, while all remaining contributions are nonnegative.
 \end{proof}
  
 \begin{remark}
@@ -809,7 +805,7 @@ Trans. Amer. Math. Soc. \textbf{375} (2022), 5923--5961.
  
 \bibitem{FMP}
 L.~Ferroni, A.~H. Morales, and G.~Panova,
-\emph{Skew shapes, Ehrhart positivity and beyond},
+\emph{Skew shapes, Ehrhart positivity, and beyond},
 Proc. Lond. Math. Soc. \textbf{133} (2026), e70204.
 \href{https://arxiv.org/abs/2503.16403}{arXiv:2503.16403}.
  
