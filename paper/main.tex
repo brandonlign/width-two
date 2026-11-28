@@ -165,12 +165,13 @@ of all coefficients~\cite[Theorem~3.4]{FMP}. For a width-two poset, we express
 the linear coefficient as an alternating sum over increasing matchings in the
 board of incomparable pairs (Section~\ref{sec:prelim}).
 
-For the $61$-element counterexample and the infinite family, we evaluate this
-sum in closed form by inclusion--exclusion (Section~\ref{sec:counterexample}).
-For the $43$-element counterexample, we count linear extensions by their number
-of descents directly (Section~\ref{sec:small}).
+We evaluate this sum in closed form by inclusion--exclusion for the
+$61$-element counterexample and the infinite family
+(Section~\ref{sec:counterexample}). The $43$-element counterexample is handled
+by counting its linear extensions by number of descents directly
+(Section~\ref{sec:small}).
 
-For the three positive classes, we use three different arguments: a
+Each positive class needs its own argument: a
 representation-theoretic expansion for series-parallel posets
 (Section~\ref{sec:sp}), a finite polynomial certificate for the short-chain
 case (Section~\ref{sec:short}), and a probabilistic and inductive argument for
@@ -403,9 +404,9 @@ $d>21$.
 \end{lemma}
 
 \begin{proof}
-We proceed in three steps. First, we encode unrestricted shuffles of the two
-chains by their descents. Next, we impose the second cross-chain relation.
-Finally, we subtract the shuffles that still violate the first.
+We encode unrestricted shuffles of the two chains by their descents, impose the
+second cross-chain relation, and then subtract the shuffles that still violate
+the first.
 
 Consider first all shuffles of the two chains with no cross-chain constraints.
 Suppose a shuffle has $d$ descents, appearing in order as
@@ -496,8 +497,8 @@ positive exactly when it is connected.
 \end{theorem}
 
 \begin{proof}
-The idea is to write the descent polynomial of the poset as a nonnegative
-linear combination of the polynomials $W_{A,B}$ of two disjoint chains, using
+We write the descent polynomial of the poset as a nonnegative linear
+combination of the polynomials $W_{A,B}$ of two disjoint chains, using
 the representation theory of $\mathbb C^2$. Each term then contributes a
 probability, divided by a positive integer, to the linear coefficient.
 
@@ -568,8 +569,8 @@ elements, then $\Omega_P$ has nonnegative coefficients.
 \end{theorem}
 
 \begin{proof}
-The idea is a finite calculation. Splitting the board into intervals according
-to the relative order of its endpoints turns the linear coefficient into an
+The proof is a finite calculation. Splitting the board into intervals
+according to the relative order of its endpoints turns the linear coefficient into an
 explicit polynomial in the interval lengths. For $k\le4$, we can list and check
 all coefficients of these polynomials by computer.
 
@@ -596,8 +597,8 @@ $(x)_{\underline j}$ denotes the falling factorial.
 
 For every chamber, we computed the coefficients of this polynomial in the
 multivariate binomial basis by exact integer binomial inversion on the gap
-vectors of total size at most $k+1$, and verified that all of them are
-nonnegative for $1\le k\le4$. Because every basis element is nonnegative on
+vectors of total size at most $k+1$. All of them are nonnegative for
+$1\le k\le4$. Because every basis element is nonnegative on
 nonnegative integers, the right-hand side is nonnegative. The prefactor on the
 left-hand side is positive, so $\lin(P)\ge0$.
 
@@ -609,7 +610,7 @@ proof.
 \section{Sparse incomparability graphs}\label{sec:sparse}
 
 We call a set of cells of the board \emph{valid} if it is an increasing
-matching. Note that validity is hereditary: every subset of a valid set is
+matching. Validity is hereditary: every subset of a valid set is
 valid. We begin with posets that have few incomparable pairs.
 
 \begin{theorem}\label{thm:sparse}
@@ -621,9 +622,9 @@ coefficients.
 \end{theorem}
 
 \begin{proof}
-The idea is to interpret $N\lin(P)$ as the probability that a random ordering
-of the cells has a longest valid prefix of even length, and then to determine
-when this probability is positive.
+We interpret $N\lin(P)$ as the probability that a random ordering of the cells
+has a longest valid prefix of even length, and then determine when this
+probability is positive.
 
 Pad the board with dummy cells so that it has exactly $N-1$ cells in total.
 Declare a set of cells to be valid only if all of its cells are genuine and
@@ -748,10 +749,10 @@ This inequality is immediate for $a=1$. For $a\ge2$, the difference between the
 two sides is $(a-2)(b-1)\ge0$. This proves the bound.
 
 The bound is already strict at the base step whenever $r\ge2$. When $r=1$ and
-$H$ has at least one leaf, the first restoration makes it strict: the unique
+$H$ has at least one leaf, the first restoration makes it strict. The unique
 old valid pair of the four-cycle spans all four of its vertices, so its value
-of $f(D)$ increases by one in addition to the contribution of the new pairs,
-and later restorations preserve strictness. The only remaining equality case is
+of $f(D)$ increases by one in addition to the contribution of the new pairs.
+Later restorations preserve strictness. The only remaining equality case is
 a single four-cycle, whose comparability graph is disconnected and which
 therefore satisfies $\lin(P)=0$ by~\eqref{eq:disconnected}.
 
