@@ -7,6 +7,10 @@ authors:
     given-names: Brandon
     email: brandon.li.gn@gmail.com
     affiliation: "Great Neck, New York, USA"
+  - family-names: Rahmani
+    given-names: Rayan A.
+    email: rayanrahmani2028@u.northwestern.edu
+    affiliation: "Northwestern University"
 repository-code: "https://github.com/brandonlign/width-two"
 license: MIT
 keywords:
@@ -19,5 +23,7 @@ preferred-citation:
   authors:
     - family-names: Li
       given-names: Brandon
+    - family-names: Rahmani
+      given-names: Rayan A.
   title: "Order polynomials of width-two posets can have negative coefficients"
   year: 2026

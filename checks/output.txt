@@ -5,6 +5,11 @@ Infinite family: closed form matches direct counts for 5 <= m <= 45; negative ex
   P(30, 31, 6, 6): [t]Omega = -4563/6107790920
   P(35, 35, 5, 5): [t]Omega = -496/393347955
   P(50, 50, 5, 5): [t]Omega = -78913/7152314400
+Q: |Q| = 43, [t]Omega = -2098/3179576907
+  Omega(0..3) = [0, 1, 453, 60986]; formula, ideal count and descent DP agree
+  t is the only negative coefficient; every coefficient of Omega(t+1) is >= 0
+  with only [(13, 18)]: [t]Omega = 24700/527784021
+  with only [(1, 17)]: [t]Omega = 85/641732
 Proposition 3.1 formula matches direct counts on 200 random parameter sets
 smallest size with a negative linear coefficient: 61
   P(28, 33, 5, 7): -233/872541560
