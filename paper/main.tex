@@ -4,7 +4,7 @@
 \usepackage{lmodern,microtype}
 \usepackage{amsmath,amssymb,amsthm,mathtools}
 \usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
- 
+
 \newtheorem{theorem}{Theorem}[section]
 \newtheorem{lemma}[theorem]{Lemma}
 \newtheorem{proposition}[theorem]{Proposition}
@@ -13,11 +13,11 @@
 \theoremstyle{remark}
 \newtheorem{remark}[theorem]{Remark}
 \numberwithin{equation}{section}
- 
+
 \newcommand{\lin}{c_1}
- 
+
 \hypersetup{pdftitle={Order polynomials of width-two posets can have negative coefficients},pdfauthor={Brandon Li and Rayan A. Rahmani}}
- 
+
 \title{Order polynomials of width-two posets\\ can have negative coefficients}
 \author{Brandon Li}
 \address{Great Neck, New York, USA}
@@ -27,52 +27,50 @@
 \email{rayanrahmani2028@u.northwestern.edu}
 \subjclass[2020]{06A07, 05A15, 52B20}
 \keywords{order polynomial, width-two poset, Ehrhart positivity, linear extensions, descents}
- 
+
 \begin{document}
- 
+
 \begin{abstract}
 Ferroni, Morales, and Panova conjectured that every width-two poset has an
 order polynomial with nonnegative coefficients. We disprove this conjecture.
-The smallest counterexample we know has $43$ elements: it consists of two
-chains of sizes $22$ and $21$ joined by two relations, and its linear
-coefficient is $-2098/3179576907$. A second construction yields a $61$-element
-counterexample whose incomparable pairs are obtained by removing the hook
-$(7,1,1,1,1)$ from a corner of the $28\times33$ rectangle; its linear
-coefficient is $-233/872541560$. The same construction produces infinitely many
-counterexamples: removing the hook $(5,1,1,1,1)$ from a corner of the
+Our smallest counterexample has $43$ elements: two chains of sizes $22$ and $21$
+joined by two relations, with linear coefficient $-2098/3179576907$. A second
+construction gives a $61$-element counterexample, whose incomparable pairs fill
+the $28\times33$ rectangle except for a corner hook $(7,1,1,1,1)$, and an
+infinite family: removing the hook $(5,1,1,1,1)$ from a corner of the
 $m\times m$ square gives a negative linear coefficient for every $m\ge35$.
- 
-On the positive side, we prove coefficient nonnegativity for three classes of
-width-two posets: series-parallel posets, posets covered by two chains with one
-of size at most four, and posets whose incomparability graph has at most one
-cycle per component. For the first and third classes, we also characterize when
-the linear coefficient is positive.
+On the positive side, we prove the conjecture for series-parallel posets, for
+posets covered by two chains one of which has at most four elements, and for
+posets whose incomparability graph has at most one cycle per component. For the
+first and third classes, we also determine when the linear coefficient is
+positive.
 \end{abstract}
- 
+
 \maketitle
- 
+
 \section{Introduction}
- 
+
 Let $P$ be a finite poset with $N$ elements. For a positive integer $t$, let
 $\Omega_P(t)$ count the weakly order-preserving maps
 $f\colon P\to[t]=\{1,\dots,t\}$, that is, maps satisfying $f(x)\le f(y)$
 whenever $x<y$ in $P$. Stanley showed that $\Omega_P$ is a polynomial in $t$ of
 degree $N$, called the \emph{order polynomial} of
-$P$~\cite{Stanley1972,EC1}. It can also be expressed as an Ehrhart polynomial
+$P$~\cite{Stanley1972,EC1}. It can also be written as an Ehrhart polynomial
 via $\Omega_P(t)=\operatorname{ehr}_{\mathcal O(P)}(t-1)$, where $\mathcal O(P)$
 is the order polytope of $P$~\cite{Stanley1986}. In general, the coefficients
-of $\Omega_P$ need not be nonnegative; a basic example is an antichain of four
+of $\Omega_P$ need not be nonnegative. A basic example is an antichain of four
 elements with a minimum adjoined~\cite[Section~8.7]{FMP}.
- 
+
 Ferroni, Morales, and Panova~\cite{FMP} proved that the cell poset of every
 skew Young diagram has an order polynomial with nonnegative coefficients. They
-conjectured the same property for three further classes of posets, starting
-with posets of width two.
- 
+conjectured the same property for three further classes of posets. The first of
+these is the class of posets of width two, where the \emph{width} of a poset is
+the maximum size of an antichain.
+
 \begin{conjecture}[{\cite[Conjecture~7.1]{FMP}}]\label{conj:FMP}
 If $P$ is a poset of width two, then $\Omega_P$ has nonnegative coefficients.
 \end{conjecture}
- 
+
 Every width-two poset is covered by two chains $\alpha_1<\dots<\alpha_m$ and
 $\beta_1<\dots<\beta_n$, and its incomparable pairs $(\alpha_i,\beta_j)$ form a
 skew shape $\lambda/\mu$ inside the $m\times n$
@@ -81,10 +79,11 @@ by $R_{\lambda/\mu}$ and state Conjecture~\ref{conj:FMP} in that notation.
 They verified the conjecture by exhaustive computation whenever both chains have
 at most five elements~\cite[Section~7.1]{FMP}, and also for the complement
 zigzags $\overline Z_n$ with $n\le200$~\cite[Remark~7.3]{FMP}.
- 
+
 \subsection*{Main results}
-Our first result disproves the conjecture with a $43$-element counterexample.
- 
+Our first result disproves Conjecture~\ref{conj:FMP} with a $43$-element
+counterexample.
+
 \begin{theorem}\label{thm:small}
 Let $Q$ be the poset formed by two chains $A_1<\dots<A_{22}$ and
 $B_1<\dots<B_{21}$ together with the relations $A_1<B_{17}$ and $A_{13}<B_{18}$
@@ -93,12 +92,12 @@ and their transitive consequences. Then $Q$ has width two, $|Q|=43$, and
  [t]\,\Omega_Q(t)=-\frac{2098}{3179576907}.
 \]
 \end{theorem}
- 
-The linear coefficient is the only negative coefficient of $\Omega_Q$. We also
-construct a second, larger counterexample with $61$ elements. It belongs to a
-different family of posets, introduced in Section~\ref{sec:counterexample}, and
-extends to an infinite family of counterexamples.
- 
+
+The linear coefficient is the only negative coefficient of $\Omega_Q$. Next, we
+construct a second counterexample with $61$ elements. It belongs to a different
+family of posets, introduced in Section~\ref{sec:counterexample}, that extends
+to infinitely many counterexamples.
+
 \begin{theorem}\label{thm:main}
 Let $P$ be the poset formed by two chains $A_1<\dots<A_{28}$ and
 $B_1<\dots<B_{33}$ together with the relations $A_1<B_{27}$ and $A_5<B_{33}$ and
@@ -107,14 +106,14 @@ their transitive consequences. Then $P$ has width two, $|P|=61$, and
  [t]\,\Omega_P(t)=-\frac{233}{872541560}.
 \]
 \end{theorem}
- 
+
 The incomparable pairs of $P$ fill the $28\times33$ rectangle except for a
-hook $(7,1,1,1,1)$ at one corner. Up to duality (which leaves the order
-polynomial unchanged), $P$ is the poset $R_{\lambda/\mu}$ with
-$\lambda=(33^{28})$ and $\mu=(7,1,1,1,1)$. Here too, the linear coefficient is
-the only negative coefficient of $\Omega_P$. Generalizing this corner-hook
-construction yields infinitely many counterexamples.
- 
+hook $(7,1,1,1,1)$ at one corner. Up to duality (reversing all order relations,
+which leaves the order polynomial unchanged), $P$ is the poset $R_{\lambda/\mu}$
+with $\lambda=(33^{28})$ and $\mu=(7,1,1,1,1)$. Here too, the linear
+coefficient is the only negative coefficient of $\Omega_P$. Generalizing this
+corner-hook construction yields infinitely many counterexamples.
+
 \begin{theorem}\label{thm:family}
 For $m\ge5$, let $P_m$ be the width-two poset whose skew shape is the
 $m\times m$ square with the hook $(5,1,1,1,1)$ removed from a corner. Then
@@ -123,20 +122,21 @@ $[t]\,\Omega_{P_m}(t)<0$ for every $m\ge35$, and
  \lim_{m\to\infty}\,2m(2m-1)\,[t]\,\Omega_{P_m}(t)=-\frac38.
 \]
 \end{theorem}
- 
-Within the family $P(m,k,r,h)$ of Section~\ref{sec:counterexample}, the
+
+Within the family $P(m,k,r,h)$ defined in Section~\ref{sec:counterexample}, the
 smallest counterexample has $61$ elements (Remark~\ref{rem:smallest}). Overall,
 the smallest counterexample we know is the $43$-element poset $Q$ of
 Theorem~\ref{thm:small}. Whether a smaller width-two counterexample exists
 remains open.
- 
-On the positive side, we establish the conjecture for three subclasses of
+
+On the positive side, we prove Conjecture~\ref{conj:FMP} for three classes of
 width-two posets. Recall that a poset is \emph{series-parallel} if it can be
-built from singletons by disjoint unions and ordinal sums. The
-\emph{incomparability graph} of $P$ has vertex set $P$ with an edge for each
-incomparable pair, and its comparability graph has an edge for each comparable
-pair.
- 
+built from singletons by disjoint unions and ordinal sums (placing every
+element of one poset below every element of another). The
+\emph{incomparability graph} of $P$ has vertex set $P$ with an edge between
+every pair of incomparable elements, and the \emph{comparability graph} of $P$
+has an edge between every pair of comparable elements.
+
 \begin{theorem}\label{thm:positive}
 Let $P$ be a poset of width at most two. Then $\Omega_P$ has nonnegative
 coefficients in each of the following cases:
@@ -150,46 +150,48 @@ coefficients in each of the following cases:
 In cases (1) and (3), if $P$ is nonempty, then $[t]\,\Omega_P(t)>0$ if and only
 if the comparability graph of $P$ is connected.
 \end{theorem}
- 
-In particular, case (3) includes every width-two poset whose incomparability
-graph is a forest. It also settles the case of the complement zigzags
-of~\cite[Remark~7.3]{FMP}, whose incomparability graphs are paths
+
+In particular, case (3) covers every width-two poset whose incomparability
+graph is a forest. It also resolves the case of the complement zigzags
+from~\cite[Remark~7.3]{FMP}, whose incomparability graphs are paths
 (Corollary~\ref{cor:zigzag}).
- 
+
 \subsection*{Methods}
 Every proof in this paper reduces to the linear coefficient. Ferroni, Morales,
-and Panova showed that for any family of posets closed under taking order
-ideals and filters, nonnegativity of the linear coefficient implies
-nonnegativity of all coefficients~\cite[Theorem~3.4]{FMP}. For a width-two
-poset, we express the linear coefficient as an alternating sum over increasing
-matchings in the board of incomparable pairs (Section~\ref{sec:prelim}).
- 
+and Panova showed that if a family of posets is closed under taking order
+ideals (downward-closed subsets) and filters (upward-closed subsets), then
+nonnegativity of the linear coefficient across the family implies nonnegativity
+of all coefficients~\cite[Theorem~3.4]{FMP}. For a width-two poset, we express
+the linear coefficient as an alternating sum over increasing matchings in the
+board of incomparable pairs (Section~\ref{sec:prelim}).
+
 For the $61$-element counterexample and the infinite family, we evaluate this
 sum in closed form by inclusion--exclusion (Section~\ref{sec:counterexample}).
-For the $43$-element counterexample, we count linear extensions by descents
-directly (Section~\ref{sec:small}).
- 
-For the three positive classes, we use three distinct approaches: a
+For the $43$-element counterexample, we count linear extensions by their number
+of descents directly (Section~\ref{sec:small}).
+
+For the three positive classes, we use three different arguments: a
 representation-theoretic expansion for series-parallel posets
 (Section~\ref{sec:sp}), a finite polynomial certificate for the short-chain
 case (Section~\ref{sec:short}), and a probabilistic and inductive argument for
 sparse incomparability graphs (Section~\ref{sec:sparse}).
- 
-All computations are carried out in exact rational arithmetic, and code
-reproducing them is available at
-\url{https://github.com/brandonlign/width-two}.
- 
+
+All computations are carried out in exact rational arithmetic. Code reproducing
+them is available at \url{https://github.com/brandonlign/width-two}.
+
 \section{Preliminaries}\label{sec:prelim}
- 
-Throughout, $P$ denotes a poset with $N\ge1$ elements, and
+
+Throughout, $P$ denotes a finite poset with $N\ge1$ elements, and
 $\lin(P)=[t]\,\Omega_P(t)$ denotes the linear coefficient of its order
 polynomial.
- 
+
 \subsection{Descents and the linear coefficient}
-Fix a natural labeling of $P$, that is, an order-preserving bijection to an
-initial segment of the positive integers. In a linear extension of $P$, a
-descent is a position at which the label decreases. Let $h_j$ be the number of
-linear extensions with exactly $j$ descents, and define the descent polynomial
+Fix a \emph{natural labeling} of $P$, that is, an order-preserving bijection to
+an initial segment of the positive integers. A \emph{linear extension} of $P$
+is a total ordering of its elements compatible with the partial order, written
+as a sequence of labels; a \emph{descent} is a position where a label is
+followed by a smaller label. Let $h_j$ be the number of linear extensions with
+exactly $j$ descents, and define the \emph{descent polynomial}
 $W_P(z)=\sum_j h_jz^j$. The standard expansion of the order
 polynomial~\cite[Section~3.15]{EC1} is
 \[
@@ -197,7 +199,7 @@ polynomial~\cite[Section~3.15]{EC1} is
 \]
 Because $\binom{t+N-1-j}{N}$ has roots $t=j-N+1,\dots,j$, its linear
 coefficient for $0\le j\le N-1$ is $(-1)^j/\bigl(N\binom{N-1}{j}\bigr)$.
-Extracting the coefficient of the linear term therefore gives
+Extracting the linear coefficient therefore gives
 \begin{equation}\label{eq:linear}
  \lin(P)=\frac1N\sum_j\frac{(-1)^jh_j}{\binom{N-1}{j}}
  =\int_0^1(1-u)^{N-1}\,W_P\!\left(\frac{-u}{1-u}\right)du,
@@ -205,58 +207,64 @@ Extracting the coefficient of the linear term therefore gives
 where the second equality follows from the beta integral. Writing
 $\mathcal L_N(z^j)=(-1)^j/\bigl(N\binom{N-1}{j}\bigr)$ for the linear functional
 in \eqref{eq:linear}, we have $\lin(P)=\mathcal L_N(W_P)$.
- 
-The order polynomial of a disjoint union is the product of the order
+
+The order polynomial of a disjoint union of posets is the product of the order
 polynomials of its components, and the order polynomial of any nonempty poset
-vanishes at $t=0$. A disconnected poset therefore has an order polynomial with
-no linear term, so
+vanishes at $t=0$. A disconnected poset therefore has no linear term in its
+order polynomial, so
 \begin{equation}\label{eq:disconnected}
  \lin(P)=0\quad\text{whenever the comparability graph of $P$ is disconnected.}
 \end{equation}
- 
+
+The next lemma reduces checking nonnegativity of all coefficients to checking
+only the linear coefficient.
+
 \begin{lemma}[{\cite[Theorem~3.4]{FMP}}]\label{lem:reduction}
 Let $\mathcal F$ be a family of posets closed under taking order ideals and
 filters. If $\lin(P)\ge0$ for every $P\in\mathcal F$, then every $P\in\mathcal F$
 has an order polynomial with nonnegative coefficients.
 \end{lemma}
- 
+
 \subsection{Width two and increasing matchings}
 Suppose $P$ is covered by two disjoint chains $A_1<\dots<A_m$ and
 $B_1<\dots<B_k$, with $N=m+k$. For each $i$, let $l_i$ be the number of
 $A$-elements below $B_i$, and let $u_i$ be the number of $A$-elements not above
-$B_i$. Both sequences are weakly increasing and satisfy $l_i\le u_i$, and $B_i$
-is incomparable to $A_x$ if and only if $l_i<x\le u_i$. We call
+$B_i$. Both sequences are weakly increasing and satisfy $l_i\le u_i$. Moreover,
+$B_i$ is incomparable to $A_x$ if and only if $l_i<x\le u_i$. We call
 \[
  H=\{(i,x): l_i<x\le u_i\}
 \]
 the \emph{board} of $P$. Its cells correspond to the incomparable pairs of $P$,
-so $H$ may be viewed as the edge set of the incomparability graph, regarded as a
+so we may view $H$ as the edge set of the incomparability graph, regarded as a
 bipartite graph between the two chains. A set of cells is an
 \emph{increasing matching} if, once sorted by first coordinate, both coordinates
 strictly increase.
- 
+
+The following lemma translates descent counts into increasing matchings on the
+board.
+
 \begin{lemma}\label{lem:matchings}
 With the natural labeling given by the earliest linear extension, $h_j$ is the
 number of increasing matchings of size $j$ in the board $H$.
 \end{lemma}
- 
+
 \begin{proof}
 A linear extension of $P$ is uniquely determined by the numbers $x_i$ of
-$A$-elements preceding $B_i$. These form a weakly increasing sequence
+$A$-elements preceding $B_i$. These numbers form a weakly increasing sequence
 satisfying $l_i\le x_i\le u_i$. Label $P$ according to the earliest linear
-extension, namely the one with $x_i=l_i$ for every $i$. Under this labeling, no descent
-enters an $A$-element, and a descent enters
-$B_i$ if and only if $x_i>l_i$ and $x_i>x_{i-1}$ (with the convention $x_0=0$).
-Marking the cell $(i,x_i)$ for each such $i$ produces a set of cells in $H$
-that forms an increasing matching.
- 
-Conversely, any increasing matching determines a unique linear extension: the
-marked indices take their marked values, and each unmarked value is recovered
-greedily via $x_i=\max(l_i,x_{i-1})$. Monotonicity of the endpoints and of the
-marked cells ensures that this sequence is weakly increasing and lies within
-the endpoint bounds, and its descents occur precisely at the marked cells.
+extension, namely the one with $x_i=l_i$ for every $i$. Under this labeling, no
+descent enters an $A$-element, and a descent enters $B_i$ if and only if
+$x_i>l_i$ and $x_i>x_{i-1}$ (with the convention $x_0=0$). Marking the cell
+$(i,x_i)$ for each such $i$ gives a set of cells in $H$ that forms an
+increasing matching.
+
+Conversely, any increasing matching determines a unique linear extension. Set
+each marked index to its marked value, and recover every unmarked value greedily
+via $x_i=\max(l_i,x_{i-1})$. Monotonicity of the endpoints and of the marked
+cells ensures that this sequence is weakly increasing and stays within the
+endpoint bounds, and its descents occur precisely at the marked cells.
 \end{proof}
- 
+
 By \eqref{eq:linear} and Lemma~\ref{lem:matchings}, the linear coefficient of a
 width-two poset depends only on the number of increasing matchings of each size
 in its board. For two disjoint chains of sizes $a$ and $b$, the board is the
@@ -266,26 +274,26 @@ full $b\times a$ rectangle, and
 \]
 since an increasing matching of size $j$ is uniquely determined by choosing $j$
 rows and $j$ columns.
- 
+
 \section{The counterexamples}\label{sec:counterexample}
- 
+
 Fix integers $m,k\ge2$, $2\le r\le m$ and $2\le h\le k$. Let $P(m,k,r,h)$ be the
 poset formed by two chains $A_1<\dots<A_m$ and $B_1<\dots<B_k$ together with the
 relations
 \[
  A_1<B_{k-h+1}\qquad\text{and}\qquad A_r<B_k
 \]
-and their transitive consequences. The resulting comparable cross pairs are
-$A_1<B_j$ for $j>k-h$ and $A_i<B_k$ for $i\le r$. In the board, these relations
-remove the last $h$ cells of the first column and the first $r$ cells of the
-last row from the full $k\times m$ rectangle, deleting a hook with arm $h-1$ and
-leg $r-1$ at one corner.
- 
+and their transitive consequences. The resulting comparable pairs between the
+two chains are $A_1<B_j$ for $j>k-h$ and $A_i<B_k$ for $i\le r$. In the board,
+these relations remove the last $h$ cells of the first column and the first $r$
+cells of the last row from the full $k\times m$ rectangle. Together, these
+deleted cells form a corner hook with arm $h-1$ and leg $r-1$.
+
 Since $A_m$ and $B_1$ are incomparable, $P(m,k,r,h)$ has width exactly two. In
-this notation, $P(28,33,5,7)$ is the poset of
-Theorem~\ref{thm:main}, and $P(m,m,5,5)$ is the poset $P_m$ of
-Theorem~\ref{thm:family}.
- 
+this notation, $P(28,33,5,7)$ is the poset of Theorem~\ref{thm:main}, and
+$P(m,m,5,5)$ is the poset $P_m$ of Theorem~\ref{thm:family}. We first compute
+the descent polynomial of $P(m,k,r,h)$.
+
 \begin{proposition}\label{prop:W}
 The descent polynomial of $P=P(m,k,r,h)$ is
 \[
@@ -293,78 +301,80 @@ The descent polynomial of $P=P(m,k,r,h)$ is
  +z^2\sum_{i=0}^{h-2}\sum_{j=0}^{r-2}W_{i,j}.
 \]
 \end{proposition}
- 
+
 \begin{proof}
 By Lemma~\ref{lem:matchings}, $W_P$ counts increasing matchings in the full
 $k\times m$ rectangle that avoid the two deleted strips: the row strip in the
-last row and the column strip in the first column. We evaluate this count by
-inclusion--exclusion over the two strips. Because all cells in a strip share a
-row or a column, an increasing matching can use at most one cell from each
-strip.
- 
+last row and the column strip in the first column. We count these matchings by
+inclusion--exclusion over the two strips. Because all cells in a strip share
+either a row or a column, an increasing matching can use at most one cell from
+each strip.
+
 In the full rectangle, any matching containing the cell $(k,q+1)$ of the row
 strip must place all its remaining cells in the first $k-1$ rows and first $q$
-columns; such matchings are counted by $zW_{k-1,q}$ for $0\le q\le r-1$.
+columns. Such matchings are counted by $zW_{k-1,q}$ for $0\le q\le r-1$.
 Similarly, the matchings containing the cell $(k-q,1)$ of the column strip are
-counted by $zW_{m-1,q}$ for $0\le q\le h-1$. Since the shared corner cell is subtracted in both single sums, the term $-1$
-restores it once. Finally, a matching using one non-corner cell from each strip consists
-of two distinct cells whose remaining cells lie strictly between them in both
-coordinates, giving the double sum. Combining these terms by
-inclusion--exclusion yields the stated formula.
+counted by $zW_{m-1,q}$ for $0\le q\le h-1$. Because the shared corner cell is
+subtracted in both single sums, the term $-1$ restores it once. Finally, a
+matching that uses one non-corner cell from each strip consists of two distinct
+cells whose remaining cells lie strictly between them in both coordinates,
+producing the double sum. Combining these terms by inclusion--exclusion gives
+the stated formula.
 \end{proof}
- 
+
 \begin{proof}[Proof of Theorem~\ref{thm:main}]
 Apply $\mathcal L_N$ to Proposition~\ref{prop:W} with $(m,k,r,h)=(28,33,5,7)$
 and $N=61$. The leading term $W_{m,k}$ vanishes under $\mathcal L_N$, because
 it is the descent polynomial of two disjoint chains and its linear coefficient
 is zero by~\eqref{eq:disconnected}. Evaluating the remaining finitely many
-terms via $\mathcal L_N(z^j)=(-1)^j/\bigl(N\binom{N-1}{j}\bigr)$ yields
+terms via $\mathcal L_N(z^j)=(-1)^j/\bigl(N\binom{N-1}{j}\bigr)$ gives
 $-233/872541560$.
- 
-We verified this value by two independent computations, both of which directly
-count weakly order-preserving maps $P\to[t]$ for $t=0,1,\dots,61$: one sums
-over the values assigned to $A_1$ and $A_5$, while the other counts multichains
-of order ideals. The resulting counts begin $0,1,975,257280$. Newton
-interpolation then recovers the order polynomial exactly, confirming the stated
-linear coefficient and showing that all remaining coefficients are positive.
+
+We verified this value by two independent computations that directly count
+weakly order-preserving maps $P\to[t]$ for $t=0,1,\dots,61$. The first sums
+over the values assigned to $A_1$ and $A_5$, while the second counts
+multichains of order ideals. The resulting counts begin $0,1,975,257280$.
+Newton interpolation then recovers the order polynomial exactly, confirming the
+stated linear coefficient and showing that all remaining coefficients are
+positive.
 \end{proof}
- 
+
 \begin{proof}[Proof of Theorem~\ref{thm:family}]
 Set $m=k$ and $r=h=5$, so that $N=2m$. We evaluate the linear coefficient from
 Proposition~\ref{prop:W}. In each single sum, the hockey-stick identity
 collapses the sum over the strip, and we rewrite the resulting binomial
 coefficients using $(j+1)\binom5{j+1}=5\binom4j$. In the double sum, the
 coefficient of $z^{j+2}$ is $\binom4{j+1}^2$ for $0\le j\le3$. Collecting terms
-gives
+yields
 \[
  N(N-1)\,\lin(P_m)=\frac{10\binom{m-1}{4}-\binom{2m-6}{4}+4\binom{2m-6}{3}}
  {\binom{2m-2}{4}}.
 \]
- 
+
 Substituting $m=35+x$, the numerator becomes
 \[
- -\frac{x^4}{4}-\frac{143x^3}{6}-\frac{3049x^2}{4}-\frac{25001x}{3}-4960,
+ -\frac{x^4}{4}-\frac{143x^3}{6}-\frac{3049x^2}{4}-\frac{25001x}{3}-4960.
 \]
-which has all negative coefficients and is therefore negative for every
-$x\ge0$. Finally, since the numerator is $-\tfrac{1}{4}m^4+O(m^3)$ and the
-denominator is $\tfrac{2}{3}m^4+O(m^3)$, the displayed expression yields the
+Every coefficient of this polynomial is negative, so the numerator is negative
+for all $x\ge0$. Finally, since the numerator is $-\tfrac{1}{4}m^4+O(m^3)$ and
+the denominator is $\tfrac{2}{3}m^4+O(m^3)$, the displayed formula gives the
 claimed limit.
 \end{proof}
- 
-The same formula is positive for $5\le m\le34$, so $m\ge35$ is precisely the
-range of counterexamples within this one-parameter family.
- 
+
+The same formula is positive for $5\le m\le34$, so $m\ge35$ is the exact range
+of counterexamples in this one-parameter family.
+
 \begin{remark}\label{rem:smallest}
 Because Proposition~\ref{prop:W} expresses $\lin\bigl(P(m,k,r,h)\bigr)$ as a
-short exact sum, the entire family can be searched exhaustively. Every member
+short exact sum, we can search the entire family exhaustively. Every member
 with $m+k\le60$ satisfies $\lin\ge0$. For $m+k=61$, the negative members are
 $P(28,33,5,7)$ and $P(30,31,6,6)$, with linear coefficients $-233/872541560$ and
 $-4563/6107790920$, together with their duals $P(33,28,7,5)$ and
-$P(31,30,6,6)$; in general, the dual of $P(m,k,r,h)$ is $P(k,m,h,r)$.
+$P(31,30,6,6)$. In general, the dual of $P(m,k,r,h)$ is $P(k,m,h,r)$.
 \end{remark}
- 
+
 \section{A 43-element counterexample}\label{sec:small}
- 
+
 Let $Q$ be the poset of Theorem~\ref{thm:small}. The relations $A_1<B_{17}$ and
 $A_{13}<B_{18}$, together with their transitive consequences, generate
 precisely the cross-chain comparabilities
@@ -375,12 +385,13 @@ No $B$-element lies below an $A$-element, so the relation is acyclic. The two
 chains cover $Q$, and $A_{22}$ and $B_1$ are incomparable; hence $Q$ has width
 exactly two. Because $A_{13}<B_{18}$ involves $B_{18}$ rather than the top
 element $B_{21}$, neither $Q$ nor its dual belongs to the family $P(m,k,r,h)$.
- 
+
 Label $A_i$ by $i$ and $B_j$ by $22+j$. This is a natural labeling of $Q$.
-Every linear extension of $Q$ is a shuffle of the two chains, and its descents
-are precisely the adjacent pairs $B_j,A_i$. As in Section~\ref{sec:prelim}, let
-$h_d$ denote the number of linear extensions with $d$ descents.
- 
+Every linear extension of $Q$ is a shuffle (interleaving) of the two chains,
+and its descents are precisely the adjacent pairs $B_j,A_i$. As in
+Section~\ref{sec:prelim}, let $h_d$ denote the number of linear extensions with
+$d$ descents. The next lemma gives an explicit formula for these counts.
+
 \begin{lemma}\label{lem:Qdescents}
 For $d\ge0$,
 \begin{equation}\label{eq:Qh}
@@ -390,13 +401,13 @@ For $d\ge0$,
 with the convention $\binom nk=0$ for $k<0$ or $k>n$. In particular, $h_d=0$ for
 $d>21$.
 \end{lemma}
- 
+
 \begin{proof}
-We proceed in three steps: first we encode unrestricted shuffles of the two
-chains by their descents, next we impose the second cross-chain relation, and
-finally we subtract the shuffles that still violate the first.
- 
-Consider first all shuffles of the two chains without cross-chain constraints.
+We proceed in three steps. First, we encode unrestricted shuffles of the two
+chains by their descents. Next, we impose the second cross-chain relation.
+Finally, we subtract the shuffles that still violate the first.
+
+Consider first all shuffles of the two chains with no cross-chain constraints.
 Suppose a shuffle has $d$ descents, appearing in order as
 $B_{j_1},A_{i_1},\dots,B_{j_d},A_{i_d}$. Because each chain appears in
 increasing order, we have $i_1<\dots<i_d$ and $j_1<\dots<j_d$. Conversely, any
@@ -406,9 +417,9 @@ all $A$-elements before $A_{i_1}$, then $B_1,\dots,B_{j_1}$, then
 $A_{i_1},\dots,A_{i_2-1}$, then $B_{j_1+1},\dots,B_{j_2}$, and continue
 alternating in this way. After the final descent, append all remaining
 $A$-elements followed by all remaining $B$-elements. The initial and final
-blocks may be empty, and $d=0$ gives the shuffle placing all $A$-elements
+blocks may be empty, and $d=0$ gives the shuffle that places all $A$-elements
 first.
- 
+
 Next, impose the relation $A_{13}<B_{18}$. A shuffle violates this relation if
 and only if $B_{18}$ precedes $A_{13}$. When this happens, the first
 $A$-element after $B_{18}$ is some $A_i$ with $i\le13$, and its immediate
@@ -420,19 +431,19 @@ $i_s\le13$ are $s=1,\dots,a$, while those with $j_s\ge18$ are $s=b+1,\dots,d$.
 A violating descent therefore exists if and only if $a>b$. Choosing the two
 parts of each sequence independently yields the double sum in~\eqref{eq:Qh},
 which counts the shuffles satisfying $A_{13}<B_{18}$.
- 
+
 Among these shuffles, the relation $A_1<B_{17}$ fails if and only if $B_{17}$
 precedes $A_1$. In that case, every element before $A_1$ is a $B$-element, so
 the first descent is $B_j,A_1$ with $j\ge17$. Since $A_{13}<B_{18}$ holds, we
-must have $j=17$, and therefore $i_1=1$ and $j_1=17$. Because both sequences
-are strictly increasing and the first count cannot exceed the second, this
-forces $a=b=1$, so the remaining $d-1$ indices $i_s$ exceed $13$ and the
-remaining $j_s$ exceed $17$. There are $\binom9{d-1}\binom4{d-1}$ such shuffles
-for $d\ge1$, and none for $d=0$. Subtracting these invalid shuffles
+must have $j=17$, and hence $i_1=1$ and $j_1=17$. Because both sequences are
+strictly increasing and the first count cannot exceed the second, this forces
+$a=b=1$. Thus the remaining $d-1$ indices $i_s$ exceed $13$, and the remaining
+$j_s$ exceed $17$. There are $\binom9{d-1}\binom4{d-1}$ such shuffles for
+$d\ge1$, and none for $d=0$. Subtracting these invalid shuffles
 gives~\eqref{eq:Qh}. Finally, since there are only $21$ $B$-elements, we have
 $h_d=0$ for $d>21$.
 \end{proof}
- 
+
 \begin{proof}[Proof of Theorem~\ref{thm:small}]
 Here $N=43$. By equation~\eqref{eq:linear},
 \[
@@ -440,9 +451,9 @@ Here $N=43$. By equation~\eqref{eq:linear},
 \]
 where the values from Lemma~\ref{lem:Qdescents} are listed in
 Table~\ref{tab:h}. Summing the twenty-two terms in exact rational arithmetic
-yields $-2098/3179576907$.
+gives $-2098/3179576907$.
 \end{proof}
- 
+
 \begin{table}[ht]
 \centering
 \caption{The numbers $h_d$ of linear extensions of $Q$ with $d$ descents.}\label{tab:h}
@@ -461,140 +472,146 @@ $d$ & $h_d$ & $d$ & $h_d$\\\hline
 10 & 220506645788 & 21 & 22
 \end{tabular}
 \end{table}
- 
+
 \begin{remark}
 We verified this value in two additional ways: by counting multichains of order
-ideals of $Q$ and by running a dynamic program over shuffles. We also expanded
+ideals of $Q$, and by running a dynamic program over shuffles. We also expanded
 $\Omega_Q$ in exact arithmetic. All of these computations are reproduced by
 \path{checks/verify_small_counterexample.py}.
- 
-The linear coefficient is the only negative coefficient of $\Omega_Q(t)$. In
+
+The linear coefficient is the only negative coefficient of $\Omega_Q(t)$. By
 contrast, every coefficient of $\Omega_Q(t+1)$ is nonnegative, so $Q$ does not
 contradict Ehrhart positivity of its order polytope. Finally, removing either
 cross-chain relation produces a poset with a positive linear coefficient:
 $24700/527784021$ without $A_1<B_{17}$, and $85/641732$ without
 $A_{13}<B_{18}$.
 \end{remark}
- 
+
 \section{Series-parallel posets}\label{sec:sp}
- 
+
 \begin{theorem}\label{thm:sp}
 Every series-parallel poset of width at most two has an order polynomial with
 nonnegative coefficients. If such a poset is nonempty, its linear coefficient is
 positive exactly when it is connected.
 \end{theorem}
- 
+
 \begin{proof}
-The idea is to expand the descent polynomial of the whole poset as a nonnegative
-combination of the polynomials $W_{A,B}$ of two disjoint chains, using the
-representation theory of $\mathbb C^2$. Each term then contributes a
+The idea is to write the descent polynomial of the poset as a nonnegative
+linear combination of the polynomials $W_{A,B}$ of two disjoint chains, using
+the representation theory of $\mathbb C^2$. Each term then contributes a
 probability, divided by a positive integer, to the linear coefficient.
- 
-Every nontrivial parallel composition of width at most two consists of two
-chains. Consequently, any series-parallel poset of width at most two is an
-ordinal sum of blocks $C_a\sqcup C_b$, where $C_a$ denotes an $a$-element chain
-and either chain may be empty. This class is closed under taking ideals and
-filters. Each block has descent polynomial $W_{a,b}$. Under a blockwise natural
-labeling, the descent polynomial of an ordinal sum is the product of the
-descent polynomials of its blocks.
- 
-Set $\phi_{a,b}(u)=(1-u)^{(a+b)/2}W_{a,b}\bigl(-u/(1-u)\bigr)$. In
-$\operatorname{Sym}^{a+b}(\mathbb C^2)$, this function is the diagonal matrix
-coefficient, at the unit monomial of bidegree $(a,b)$, of the rotation with
-diagonal entries $\sqrt{1-u}$ and off-diagonal entries $\pm\sqrt u$. This
-follows by expanding the images of the two variables and extracting the
-original monomial.
- 
+
+Every nontrivial parallel composition (disjoint union) of width at most two
+consists of two chains. Consequently, any series-parallel poset of width at
+most two is an ordinal sum of blocks $C_a\sqcup C_b$, where $C_a$ denotes an
+$a$-element chain and either chain may be empty. This class is closed under
+taking order ideals and filters. Each block has descent polynomial $W_{a,b}$.
+Under a natural labeling that labels one block at a time in order, the descent
+polynomial of an ordinal sum is the product of the descent polynomials of its
+blocks.
+
+Set $\phi_{a,b}(u)=(1-u)^{(a+b)/2}W_{a,b}\bigl(-u/(1-u)\bigr)$. On the
+symmetric power $\operatorname{Sym}^{a+b}(\mathbb C^2)$, this function is the
+diagonal matrix entry, at the unit monomial of bidegree $(a,b)$, of the
+rotation with diagonal entries $\sqrt{1-u}$ and off-diagonal entries
+$\pm\sqrt u$. One sees this by applying the rotation to the two variables,
+expanding, and extracting the coefficient of the original monomial.
+
 Taking the tensor product over all blocks, the product of the block functions
-is the diagonal matrix coefficient of the same rotation at the unit tensor of
-these monomials. Decompose this tensor product orthogonally into irreducibles
-$\operatorname{Sym}^d(\mathbb C^2)$ with $d\le N$ and $d\equiv N\pmod2$. In
-each summand, the projected tensor lies in a single weight space, which is at
-most one-dimensional. Hence the product is a nonnegative linear combination of
-functions $\phi_{A,B}$ with $A+B=d$, weighted by squared projection norms.
- 
+is the diagonal matrix entry of the same rotation at the unit tensor of these
+monomials. Decompose this tensor product orthogonally into irreducible
+representations $\operatorname{Sym}^d(\mathbb C^2)$ with $d\le N$ and
+$d\equiv N\pmod2$. In each summand, the projected tensor has a fixed bidegree
+and therefore lies in a single weight space, which is at most one-dimensional.
+Hence the product is a nonnegative linear combination of functions $\phi_{A,B}$
+with $A+B=d$, weighted by the squared norms of the projections.
+
 By~\eqref{eq:linear}, it remains to integrate $(1-u)^{N/2-1}\phi_{A,B}(u)$ over
-$[0,1]$. Setting $M=(N+d)/2-1$, this integral evaluates to
+$[0,1]$. Setting $M=(N+d)/2-1$, this integral equals
 \[
  \frac1{M+1}\sum_j\frac{(-1)^j\binom Aj\binom Bj}{\binom Mj}.
 \]
-If $A=0$ or $B=0$, the sum equals $1$. Otherwise $M\ge d-1\ge\max(A,B)$, and by
-inclusion--exclusion the sum is the probability that a uniformly random
-$A$-subset of an $M$-set avoids a fixed $B$-subset. Each summand in the
+If $A=0$ or $B=0$, the sum equals $1$. Otherwise $M\ge d-1\ge\max(A,B)$. By
+inclusion--exclusion, the sum is then the probability that a uniformly random
+$A$-subset of an $M$-set avoids a fixed $B$-subset. Every summand in the
 expansion therefore makes a nonnegative contribution, giving $\lin(P)\ge0$.
 Nonnegativity of all coefficients now follows from Lemma~\ref{lem:reduction}.
- 
-To characterize strictness, discard any empty blocks and set $A_0=\sum_ia_i$,
-$B_0=\sum_ib_i$ and $n_i=a_i+b_i$. If $A_0=0$ or $B_0=0$, the poset is a chain
-and its linear coefficient is positive. Otherwise, the top irreducible summand
-$d=N$ has squared projection norm
+
+To determine when the linear coefficient is strictly positive, discard any
+empty blocks and set $A_0=\sum_ia_i$, $B_0=\sum_ib_i$ and $n_i=a_i+b_i$. If
+$A_0=0$ or $B_0=0$, then the poset is a chain and its linear coefficient is
+positive. Otherwise, the top irreducible summand $d=N$ has squared projection
+norm
 \[
  \frac{\prod_i\binom{n_i}{a_i}}{\binom N{A_0}}.
 \]
-Indeed, the normalized completely symmetric weight vector sums uniformly over
-all allocations of the $A_0$ first-variable positions across the tensor
-factors, and the fixed allocation prescribed by the blocks has the stated
-squared norm.
- 
-When there are at least two nonempty blocks and $0<A_0<N$, another allocation
-exists: one can move a first-variable position from an occupied block to a
-different block containing a second-variable position. Thus the top squared
-norm is strictly less than one, so some lower summand has nonzero weight. In
-every lower summand we have $M\ge A+B$, so the avoidance probability is
-positive and that summand contributes a positive amount. Finally, a single
-block with $a,b>0$ is disconnected and has linear coefficient zero
-by~\eqref{eq:disconnected}.
+Indeed, the unit vector in that weight space of the top symmetric power sums
+uniformly over all ways to distribute the $A_0$ first-variable positions across
+the tensor factors. The single allocation prescribed by the blocks therefore
+has the stated squared norm.
+
+When there are at least two nonempty blocks and $0<A_0<N$, at least one other
+allocation exists: we can move a first-variable position from an occupied block
+to a different block that contains a second-variable position. Thus the top
+squared norm is strictly less than one, so some lower summand has nonzero
+weight. In every lower summand we have $M\ge A+B$, so the avoidance
+probability is positive and that summand contributes a positive amount.
+Finally, a single block with $a,b>0$ is disconnected and has linear coefficient
+zero by~\eqref{eq:disconnected}.
 \end{proof}
- 
+
 \section{A short chain}\label{sec:short}
- 
+
 \begin{theorem}\label{thm:short}
 If $P$ is covered by two disjoint chains and one of them has at most four
 elements, then $\Omega_P$ has nonnegative coefficients.
 \end{theorem}
- 
+
 \begin{proof}
-The idea is a finite check. Cutting the board into pieces according to the
-relative order of its endpoints turns the linear coefficient into an explicit
-polynomial in the piece sizes, and for $k\le4$ its coefficients can be listed
-and checked by computer.
- 
+The idea is a finite calculation. Splitting the board into intervals according
+to the relative order of its endpoints turns the linear coefficient into an
+explicit polynomial in the interval lengths. For $k\le4$, we can list and check
+all coefficients of these polynomials by computer.
+
 Let the long chain have $m$ elements and the short chain have $k\le4$ elements.
-If $k=0$, then $P$ is a chain, and its order polynomial is $\binom{t+N-1}{N}$, which has positive coefficients; so assume $k\ge1$ and hence $m\ge1$. By
-Lemma~\ref{lem:matchings}, $h_j$ counts choices of $j$ increasing indices $i$
-in the short chain together with strictly increasing marks $x_i\in(l_i,u_i]$.
- 
+If $k=0$, then $P$ is a chain, and its order polynomial is $\binom{t+N-1}{N}$,
+which has positive coefficients. Assume therefore that $k\ge1$, and hence
+$m\ge1$. By Lemma~\ref{lem:matchings}, $h_j$ counts choices of $j$ increasing
+indices $i$ in the short chain together with strictly increasing marks
+$x_i\in(l_i,u_i]$.
+
 Sort the $2k$ endpoints $l_1,\dots,l_k,u_1,\dots,u_k$, breaking ties
 consistently with the weak monotonicity of the two sequences and with
 $l_i\le u_i$. This partitions $[0,m]$ into $2k+1$ nonnegative integer gaps.
-Call each such ordering of the endpoints a chamber. Within a fixed chamber,
-$h_j$ is a polynomial of total degree at most $j$ in the gap sizes: one assigns
-each mark to a gap and chooses the ordered marks within each gap via a
-binomial coefficient in its size. Consequently,
+Call each such ordering of the endpoints a \emph{chamber}. Within a fixed
+chamber, $h_j$ is a polynomial of total degree at most $j$ in the gap sizes:
+one assigns each mark to a gap and chooses the ordered marks within each gap by
+a binomial coefficient in its size. Consequently,
 \[
  (m+1)N(N-1)_{\underline k}\,\lin(P)
  =(m+1)\sum_j(-1)^j j!\,h_j\,(N-1-j)_{\underline{k-j}}
 \]
 is a polynomial of degree at most $k+1$ in the gap sizes, where
 $(x)_{\underline j}$ denotes the falling factorial.
- 
+
 For every chamber, we computed the coefficients of this polynomial in the
 multivariate binomial basis by exact integer binomial inversion on the gap
 vectors of total size at most $k+1$, and verified that all of them are
-nonnegative for $1\le k\le4$. Because every multivariate binomial basis element
-is nonnegative on nonnegative integers, the right-hand side is nonnegative. The
-prefactor is positive, so $\lin(P)\ge0$.
- 
-Since any ideal or filter of $P$ is again covered by two chains one of which
-has at most four elements, Lemma~\ref{lem:reduction} applies.
+nonnegative for $1\le k\le4$. Because every basis element is nonnegative on
+nonnegative integers, the right-hand side is nonnegative. The prefactor on the
+left-hand side is positive, so $\lin(P)\ge0$.
+
+Any order ideal or filter of $P$ is again covered by two chains, one of which
+has at most four elements. Lemma~\ref{lem:reduction} therefore completes the
+proof.
 \end{proof}
- 
+
 \section{Sparse incomparability graphs}\label{sec:sparse}
- 
+
 We call a set of cells of the board \emph{valid} if it is an increasing
 matching. Note that validity is hereditary: every subset of a valid set is
-valid.
- 
+valid. We begin with posets that have few incomparable pairs.
+
 \begin{theorem}\label{thm:sparse}
 Let $P$ be a nonempty poset of width at most two with $N$ elements and at most
 $N-1$ incomparable pairs. Then $\lin(P)\ge0$, with equality exactly when the
@@ -602,228 +619,232 @@ comparability graph of $P$ is disconnected. In particular, if the
 incomparability graph of $P$ is a forest, then $\Omega_P$ has nonnegative
 coefficients.
 \end{theorem}
- 
+
 \begin{proof}
 The idea is to interpret $N\lin(P)$ as the probability that a random ordering
 of the cells has a longest valid prefix of even length, and then to determine
 when this probability is positive.
- 
-Pad the board with dummy cells so that it has exactly $N-1$ cells, and declare
-a set of cells to be valid only if all of its cells are genuine and form an
-increasing matching. Order the padded board uniformly at random, and let $L$ be
-the length of the longest valid prefix. Because the prefix of size $j$ is a
-uniformly random $j$-subset, Lemma~\ref{lem:matchings} gives
+
+Pad the board with dummy cells so that it has exactly $N-1$ cells in total.
+Declare a set of cells to be valid only if all of its cells are genuine and
+form an increasing matching. Order the padded board uniformly at random, and
+let $L$ be the length of its longest valid prefix. Because the prefix of size
+$j$ is a uniformly random $j$-subset, Lemma~\ref{lem:matchings} gives
 $\Pr(L\ge j)=h_j/\binom{N-1}{j}$. By \eqref{eq:linear},
 \[
  N\lin(P)=\sum_{j=0}^{N-1}(-1)^j\Pr(L\ge j)=\Pr(L\text{ is even}).
 \]
 This probability is positive whenever there is at least one dummy cell or
-$N=1$, since in either case $L=0$ occurs with positive probability.
- 
+$N=1$, because in either case $L=0$ occurs with positive probability.
+
 Suppose now that there are exactly $N-1$ genuine cells and $N>1$. Assume first
-that no valid pair exists. Then the bipartite incomparability graph contains no
-two disjoint edges. Indeed, two disjoint cells in increasing position already
-form a valid pair, while two crossing cells force the other two corners of
-their rectangle to belong to the board by monotonicity of the endpoints, and
+that no valid pair exists. Then the bipartite incomparability graph has no two
+disjoint edges. Indeed, two disjoint cells in increasing position already form
+a valid pair. On the other hand, two crossing cells force the other two corners
+of their rectangle to belong to the board by monotonicity of the endpoints, and
 those two corners form a valid pair. A bipartite graph with at least one edge
 and no two disjoint edges consists of a star together with isolated vertices.
-Having $N-1$ edges, this star must span $P$, so its center is isolated in the
-comparability graph.
- 
-Otherwise, there exists a valid pair. There must also be an invalid pair, since
+Because this star has $N-1$ edges, it must span $P$, so its center is isolated
+in the comparability graph.
+
+Otherwise, some valid pair exists. There must also be an invalid pair, since
 $N-1$ edges on $N\ge3$ vertices cannot be pairwise disjoint. Suppose for
 contradiction that every third cell extends every valid pair to a valid triple.
-Starting from a single valid pair, its first cell must then form a valid pair
-with every other cell. Applying the same assumption to those pairs implies that
+Starting from one valid pair, its first cell must then form a valid pair with
+every other cell. Applying the same assumption to those pairs implies that
 every pair is valid, a contradiction. Hence some valid pair is followed by a
-third cell that does not extend it, which gives $L=2$ with positive
-probability and thus $\lin(P)>0$. Conversely, if the comparability graph is
-disconnected, then $\lin(P)=0$ by~\eqref{eq:disconnected}.
- 
+third cell that does not extend it, which gives $L=2$ with positive probability
+and thus $\lin(P)>0$. Conversely, if the comparability graph is disconnected,
+then $\lin(P)=0$ by~\eqref{eq:disconnected}.
+
 Finally, being a forest is inherited by induced subgraphs, and the
-incomparability graph of an ideal or filter is an induced subgraph of that of
-$P$. The class of width-two posets whose incomparability graph is a forest is
-therefore closed under ideals and filters, so Lemma~\ref{lem:reduction}
-applies.
+incomparability graph of an order ideal or filter is an induced subgraph of
+that of $P$. The class of width-two posets whose incomparability graph is a
+forest is therefore closed under order ideals and filters, so
+Lemma~\ref{lem:reduction} applies.
 \end{proof}
- 
+
+We now extend this result from forests to incomparability graphs with at most
+one cycle in each connected component.
+
 \begin{theorem}\label{thm:pseudoforest}
 Let $P$ be a poset of width at most two such that every connected component of
 its incomparability graph contains at most one cycle. Then $\Omega_P$ has
 nonnegative coefficients. If $P$ is nonempty, then $\lin(P)>0$ if and only if
 the comparability graph of $P$ is connected.
 \end{theorem}
- 
+
 \begin{proof}
-After reducing to the case in which every component is unicyclic, we show that
-every cycle has length four and use an edge orientation to prove that the
+After reducing to the case in which every component has exactly one cycle, we
+show that every cycle has length four. An edge orientation then shows that the
 normalized descent counts are nonincreasing after the constant term. This
-reduces the desired bound on the linear coefficient to a single inequality on
-valid pairs and triples, which we prove by induction as pruned leaves are
-restored.
- 
+reduces the desired bound on the linear coefficient to a single inequality
+relating valid pairs and valid triples, which we prove by induction as pruned
+leaves are restored.
+
 Let $N=|P|\ge1$ and let $H$ be the incomparability graph of $P$. Any graph in
 which every component contains at most one cycle has at most $N$ edges. If $H$
 has at most $N-1$ edges, then Theorem~\ref{thm:sparse} applies. We may
-therefore assume that $H$ has exactly $N$ edges, which occurs only when every
-component is unicyclic.
- 
+therefore assume that $H$ has exactly $N$ edges, which happens only when every
+component is unicyclic (contains a unique cycle).
+
 Call a pair of cells in distinct rows and distinct columns a
 \emph{crossing pair} if the cell in the smaller row lies in the larger column.
 By monotonicity of the endpoints, a crossing pair forces the other two corners
-of its rectangle to be cells of $H$, so the two edges lie on a $4$-cycle.
+of its rectangle to belong to $H$, so the two edges lie on a $4$-cycle.
 Conversely, every cycle contains a crossing pair: in the least row of the
 cycle, pair the edge at the larger of its two cycle columns with the edge at
 the smaller column in another row of the cycle. Consequently, each unicyclic
 component has a unique cycle, that cycle has length four, and no leaf edge of
 $H$ belongs to a crossing pair.
- 
-Orient each cycle cyclically and orient every remaining edge toward the cycle
+
+Orient each cycle cyclically, and orient every remaining edge toward the cycle
 of its component, so that every vertex has out-degree one. For each edge in a
 valid $j$-set, the outgoing edge at its head is incompatible with the set.
 These $j$ incompatible edges are distinct and unselected, because a valid set
 is a matching and no edge is oriented in both directions. Double-counting valid
-one-edge extensions therefore yields
+one-edge extensions therefore gives
 \[
  (j+1)h_{j+1}\le(N-2j)h_j\qquad(1\le j\le\lfloor N/2\rfloor).
 \]
 It follows that $a_j=h_j/\binom{N-1}{j}$ is nonincreasing for $1\le j\le N-1$,
 with $a_j=0$ for $j>\lfloor N/2\rfloor$. Since $a_0-a_1=-1/(N-1)$, the
-alternating sum in \eqref{eq:linear} shows
-that it suffices to prove $a_2-a_3\ge1/(N-1)$, with strict inequality implying
-$\lin(P)>0$.
- 
-For each valid pair $D$, let $f(D)$ denote the number of unselected edges
+alternating sum in \eqref{eq:linear} shows that it suffices to prove
+$a_2-a_3\ge1/(N-1)$, with strict inequality implying $\lin(P)>0$.
+
+For each valid pair $D$, let $f(D)$ be the number of unselected edges
 incompatible with $D$. Because each valid triple extends three distinct valid
 pairs, the desired inequality is equivalent to
 \[
  S:=\sum_{D\text{ valid},\ |D|=2}\bigl(f(D)-1\bigr)=(N-3)h_2-3h_3\ \ge\ \binom{N-2}{2}.
 \]
-We prove this bound by iteratively pruning leaves while retaining the cycles.
-Because pruning a leaf corresponds to taking an induced restriction of $P$,
-compatibility among the remaining edges is unaffected.
- 
-Suppose first that $H$ is a disjoint union of $r$ four-cycles. The unique valid
-pair inside each cycle has $f(D)=2$, contributing one to the sum. Any two edges
-from different components form a valid pair, as they neither cross nor share a
-vertex; there are sixteen such pairs between any two cycles, and each satisfies
-$f(D)\ge4$ because each of its two edges has at least two incompatible
-neighbors in its own cycle. Hence
+We prove this bound by iteratively pruning leaves (degree-one vertices together
+with their incident edges) while keeping the cycles. Because pruning a leaf
+corresponds to taking an induced subposet of $P$, compatibility among the
+remaining edges is unaffected.
+
+Suppose first that $H$ is a disjoint union of $r$ four-cycles. Inside each
+cycle, the unique valid pair has $f(D)=2$, contributing one to the sum. Any two
+edges from different components form a valid pair, since they neither cross nor
+share a vertex. There are sixteen such pairs between any two cycles, and each
+satisfies $f(D)\ge4$ because each of its two edges has at least two
+incompatible neighbors in its own cycle. Hence
 \[
  S\ge r+48\binom r2=\binom{4r-2}{2}+(r-1)(16r+3).
 \]
- 
+
 Now restore one pruned leaf edge $v$, and let $N$ denote the resulting number
 of edges. Let $a$ and $b$ be the numbers of old edges incompatible and
 compatible with $v$, respectively, so that $a+b=N-1$. We have $a\ge1$ because
 $v$ meets its unicyclic component, and $b\ge1$ because some old cycle edge
 avoids the attachment vertex and $v$ cannot cross it. Restoring $v$ does not
-decrease the contributions of old pairs, while each of the new valid pairs
+decrease the contributions of old pairs. Meanwhile, each of the new valid pairs
 containing $v$ satisfies $f(D)\ge a$ by definition and $f(D)\ge2$ by the
 orientation argument. Therefore $S$ increases by at least
 \[
  b\max\{1,a-1\}\ \ge\ a+b-2=N-3=\binom{N-2}{2}-\binom{N-3}{2}.
 \]
-This inequality is immediate for $a=1$, and for $a\ge2$ the difference between
-the two sides is $(a-2)(b-1)\ge0$. This establishes the bound.
- 
+This inequality is immediate for $a=1$. For $a\ge2$, the difference between the
+two sides is $(a-2)(b-1)\ge0$. This proves the bound.
+
 The bound is already strict at the base step whenever $r\ge2$. When $r=1$ and
 $H$ has at least one leaf, the first restoration makes it strict: the unique
 old valid pair of the four-cycle spans all four of its vertices, so its value
 of $f(D)$ increases by one in addition to the contribution of the new pairs,
-and subsequent restorations preserve strictness. The sole remaining equality
-case is a single four-cycle, whose comparability graph is disconnected and
-which therefore satisfies $\lin(P)=0$ by~\eqref{eq:disconnected}.
- 
-Since induced restrictions preserve both having width at most two and the cycle
-condition on $H$, this class is closed under ideals and filters, and
+and later restorations preserve strictness. The only remaining equality case is
+a single four-cycle, whose comparability graph is disconnected and which
+therefore satisfies $\lin(P)=0$ by~\eqref{eq:disconnected}.
+
+Since induced subposets preserve both having width at most two and the cycle
+condition on $H$, this class is closed under order ideals and filters, and
 Lemma~\ref{lem:reduction} completes the proof.
 \end{proof}
- 
+
 \begin{proof}[Proof of Theorem~\ref{thm:positive}]
 Cases (1), (2) and (3) follow directly from Theorems~\ref{thm:sp},
 \ref{thm:short} and~\ref{thm:pseudoforest}, respectively.
 \end{proof}
- 
+
 \begin{corollary}\label{cor:zigzag}
 For every $N$, the complement zigzag $\overline Z_N$ has an order polynomial with
 nonnegative coefficients. For $N\ge4$, its linear coefficient is positive, and a
 direct computation shows that all its coefficients in degrees $1,\dots,N$ are
 positive for $4\le N\le40$.
 \end{corollary}
- 
+
 \begin{proof}
 The complement zigzag $\overline Z_N$ of~\cite[Remark~7.3]{FMP} is the poset on
 $[N]$ in which $i<j$ if and only if $j-i\ge2$; the defining cover relations of
 lengths two and three generate all such differences. Its incomparability graph
-is a path, so Theorem~\ref{thm:sparse} yields nonnegativity. For $N\ge4$, the
-comparability graph is connected, so the linear coefficient is positive.
- 
-The positivity of the remaining coefficients for $4\le N\le40$ is verified in
-exact arithmetic by \path{checks/random_small_posets.py}; for example,
+is a path, so Theorem~\ref{thm:sparse} yields nonnegativity of all
+coefficients. For $N\ge4$, the comparability graph is connected, so the linear
+coefficient is positive.
+
+Positivity of the remaining coefficients for $4\le N\le40$ is verified in exact
+arithmetic by \path{checks/random_small_posets.py}; for example,
 \[
  \Omega_{\overline Z_4}(t)=\frac{5t^4+10t^3+7t^2+2t}{24}.
 \]
 \end{proof}
- 
+
 \begin{remark}
-The proof of Theorem~\ref{thm:sp} expresses the descent polynomial as a
+The proof of Theorem~\ref{thm:sp} writes the descent polynomial as a
 nonnegative linear combination of rectangle-type polynomials of fixed weight.
-Such an expansion does not exist for all width-two posets: for two chains of
-length three with $l=(0,0,0)$ and $u=(2,3,3)$, direct counting gives
+Such an expansion does not exist for all width-two posets. For example, for two
+chains of length three with $l=(0,0,0)$ and $u=(2,3,3)$, direct counting gives
 $W_P=1+8z+9z^2+z^3$, whose coordinates in the ordered basis
 $(1-z)^rW_{3-r,3-r}(z)$, $0\le r\le3$, are $(57,-5,3,5)/60$. This rules out
-that method of proof for general width-two posets, though not nonnegativity
+that proof method for general width-two posets, though not nonnegativity
 itself.
 \end{remark}
- 
+
 \section*{Statements and Declarations}
- 
+
 \paragraph{Use of AI tools.} Claude (Anthropic) and OpenAI ChatGPT helped with the proofs, the verification
 code, and the manuscript. The authors take full responsibility for the content.
- 
+
 \paragraph{Acknowledgments.} We thank Greta Panova for confirming the
 $43$-element example in September 2026 (personal communication). R.A.R.\ thanks
 A.~J.~Peterson for guidance on ethical considerations and norms surrounding the
 use of AI in mathematical research.
- 
+
 \paragraph{Competing interests.} The authors have no relevant financial or non-financial
 interests to disclose.
- 
+
 \paragraph{Funding.} No funding was received for this work.
- 
+
 \paragraph{Data availability.} The verification code is provided as Online
 Resource~1 and at \url{https://github.com/brandonlign/width-two}. No other data
 were used.
- 
+
 \begin{thebibliography}{9}
- 
+
 \bibitem{CPP}
 S.~H. Chan, I.~Pak, and G.~Panova,
 \emph{The cross-product conjecture for width two posets},
 Trans. Amer. Math. Soc. \textbf{375} (2022), 5923--5961.
- 
+
 \bibitem{FMP}
 L.~Ferroni, A.~H. Morales, and G.~Panova,
 \emph{Skew shapes, Ehrhart positivity, and beyond},
 Proc. Lond. Math. Soc. \textbf{133} (2026), e70204.
 \href{https://arxiv.org/abs/2503.16403}{arXiv:2503.16403}.
- 
+
 \bibitem{Stanley1972}
 R.~P. Stanley,
 \emph{Ordered structures and partitions},
 Mem. Amer. Math. Soc. \textbf{119} (1972).
- 
+
 \bibitem{Stanley1986}
 R.~P. Stanley,
 \emph{Two poset polytopes},
 Discrete Comput. Geom. \textbf{1} (1986), 9--23.
- 
+
 \bibitem{EC1}
 R.~P. Stanley,
 \emph{Enumerative Combinatorics, Volume 1}, 2nd ed.,
 Cambridge Stud. Adv. Math. \textbf{49}, Cambridge University Press, 2012.
- 
+
 \end{thebibliography}
- 
+
 \end{document}
